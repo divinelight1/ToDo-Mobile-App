@@ -27,15 +27,19 @@ var mainController = function($scope , $route , $http){
 };
 myApp.controller('mainController' , mainController);
 
+
 var menuController = function($scope , $route , $http){
 
 };
 myApp.controller('menuController' , menuController);
 
+
 var todorouteController = function($scope , $route , $http){
 
 };
 myApp.controller('todorouteController' , todorouteController);
+
+
 
 
 
@@ -58,3 +62,4 @@ var toDoController = function($scope){
 		})
 	};
 };
+
