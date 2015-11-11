@@ -17,7 +17,7 @@ myApp.config(function($routeProvider){
 
 	.when('/todo' , {
 		templateUrl: "pages/todo.html" , 
-		controller: "todoController"
+		controller: "todorouteController"
 	})
 });
 //controllers
@@ -32,11 +32,29 @@ var menuController = function($scope , $route , $http){
 };
 myApp.controller('menuController' , menuController);
 
-var todoController = function($scope , $route , $http){
+var todorouteController = function($scope , $route , $http){
 
 };
-myApp.controller('todoController' , todoController);
+myApp.controller('todorouteController' , todorouteController);
 
 
 
 
+// todo
+myApp.controller('toDoController' , toDoController);
+
+var toDoController = function($scope){
+	$scope.todos = [
+		{'title' : 'add task' , 'done':false}
+	];
+
+	$scope.addToDo = function(){
+		$scope.todos.push({'title' : $scope.newtodo , 'done':false});
+		$scope.newtodo = "";
+	};
+	$scope.clearCompleted = function(){
+		$scope.todos = $scope.todos.filter(function(item){
+			return !item.done;
+		})
+	};
+};
